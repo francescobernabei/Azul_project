@@ -154,6 +154,11 @@ class Azul(AbstractGame):
                     print(self.players[playerNb].board.print_board())
                     print(self.middle)
 
+    def calculate_points(self):
+        for playerNb in range(self.numberOfPlayers):
+            self.players[playerNb].board.check_full_rows()
+            print(self.players[playerNb].board.rightPart)
+
     def factory_display_not_empty(self):
         is_empty = False
         for i in range(len(self.factoryDisplays)):

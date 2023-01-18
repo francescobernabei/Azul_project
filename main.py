@@ -8,3 +8,4 @@ if __name__ == '__main__':
     game.initialize_player()
     game.prepare_turn()
     game.player_take_tiles('human')
+    game.calculate_points()
