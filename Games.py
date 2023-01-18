@@ -159,6 +159,7 @@ class Azul(AbstractGame):
             self.players[playerNb].board.check_full_rows()
             print(self.players[playerNb].board.rightPart)
 
+
     def factory_display_not_empty(self):
         is_empty = False
         for i in range(len(self.factoryDisplays)):

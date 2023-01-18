@@ -79,24 +79,45 @@ class Board:
         return True
 
     def check_full_rows(self):
+        firstrow = [False,False,False,False,False]
+        secondrow = [False,False,False,False,False]
+        thirdrow = [False,False,False,False,False]
+        fourthrow = [False,False,False,False,False]
+        fifthrow = [False,False,False,False,False]
+        rightpart = []
         if len(self.firstRowLeft) == self.firstRowLeft.maxlen :
             self.rightPart[0][self.firstRowLeft[0]] = True
             for elem in range(len(self.firstRowLeft)):
                 self.firstRowLeft[elem] = -1
+            firstrow = list(self.rightPart[0].values())
+        rightpart.append(firstrow)
         if len(self.secondRowLeft) == self.secondRowLeft.maxlen :
             self.rightPart[1][self.secondRowLeft[0]] = True
             for elem in range(len(self.secondRowLeft)):
                 self.secondRowLeft[elem] = -1
+            secondrow = list(self.rightPart[1].values())
+        rightpart.append(secondrow)
         if len(self.thirdRowLeft) == self.thirdRowLeft.maxlen :
             self.rightPart[2][self.thirdRowLeft[0]] = True
             for elem in range(len(self.thirdRowLeft)):
                 self.thirdRowLeft[elem] = -1
+            thirdrow = list(self.rightPart[2].values())
+        rightpart.append(thirdrow)
         if len(self.forthRowLeft) == self.forthRowLeft.maxlen :
             self.rightPart[3][self.forthRowLeft[0]] = True
             for elem in range(len(self.forthRowLeft)):
                 self.forthRowLeft[elem] = -1
+            fourthrow = list(self.rightPart[3].values())
+        rightpart.append(fourthrow)
         if len(self.fifthRowLeft) == self.fifthRowLeft.maxlen :
             self.rightPart[4][self.fifthRowLeft[0]] = True
             for elem in range(len(self.fifthRowLeft)):
                 self.fifthRowLeft[elem] = -1
-        self.print_board()
+            fifthrow = list(self.rightPart[4].values())
+        rightpart.append(fifthrow)
+
+        print("")
+        print("#############################################")
+        print(rightpart)
+        print("#############################################")
+        print()
